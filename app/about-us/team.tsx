@@ -2,7 +2,6 @@ import { CardBody, CardContainer, CardItem } from "../components/3d-card";
 import Image from "next/image";
 import { TextGenerateEffect } from "../components/text-generate-effect";
 import { Github, Mail, Twitter } from "lucide-react";
-import { Spotlight } from "../components/spotlight";
 
 const words = 'Meet our team'
 
