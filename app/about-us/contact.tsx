@@ -7,13 +7,13 @@ const fadeInVariant = {
 
 export function ContactSection() {
   return (
-    <div className="max-w-5xl mx-auto px-8">
+    <div className="mx-auto px-8">
         <div>
             <motion.h2 
               initial="hidden"
               animate="visible"
               variants={fadeInVariant}
-              className="text-4xl font-bold text-white">
+              className="text-6xl max-w-[1200px] text-center font-bold text-white py-8">
                 So, what are you waiting for? Let's get started!
             </motion.h2>
         </div>

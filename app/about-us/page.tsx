@@ -1,63 +1,75 @@
 "use client";
-import { Github, Mail, Twitter } from "lucide-react";
-import Link from "next/link";
 import { Navigation } from "../components/nav";
-import { CardBody, CardContainer, CardItem } from "../components/3d-card";
-import Image from "next/image";
 import { TextGenerateEffect } from "../components/text-generate-effect";
 import { BackgroundBeams } from "../components/background-beams";
-import { motion } from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
 import { Globe } from "./globe";
 import { CardHoverEffectDemo } from "./card-hover";
 import { ContactSection } from "./contact";
 import ContactButton from "./contact-button";
+import { useRef, useEffect  } from "react";
+import { TeamSection } from "./team";
 
-const socials = [
-	{
-		icon: <Twitter size={20} />,
-		href: "https://twitter.com/impius_venatus",
-		name: "Sadman Hossain",
-		post: "Technical Lead",
-		handle: "@buckyySoft_",
-		src: "/images/sadman.jpeg",
-	},
-	{
-		icon: <Mail size={20} />,
-		href: "mailto:buckyypayment@gmail.com",
-		name: "Mahdee Mahi",
-		post: "Marketing Lead",
-		handle: "buckyypayment@gmail.com",
-		src: "/images/mahdee.png",
-	},
-	{
-		icon: <Github size={20} />,
-		href: "https://github.com/buckyy",
-		name: "Tareq Rahman",
-		post: "Graphic and Design Lead",
-		handle: "buckyy",
-		src: "/images/tareq.png",
-	},
-];
-
-const words = 'Meet our team'
 const heading = 'Get your business started'
-const subheading = ''
-
-const fadeInVariant = {
-	hidden: { opacity: 0, y: 20 },
-	visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-};
-
-const fadeInVariant2 = {
-	hidden: { opacity: 0, y: 20 },
-	visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.5 } },
-};
 
 export default function AboutUs() {
+		const titleControls = useAnimation();
+		const visionControls = useAnimation();
+		const coreValuesControls = useAnimation();
+		const ourTeamControls = useAnimation();
+		
+		const titleRef = useRef(null);
+		const visionRef = useRef(null);
+		const coreValuesRef = useRef(null);
+		const ourTeamRef = useRef(null);
+	
+		const titleInView = useInView(titleRef, { amount: 0.5 });
+		const visionInView = useInView(visionRef, { amount: 0.5 });
+		const coreValuesInView = useInView(coreValuesRef, { amount: 0.5 });
+		const ourTeamInView = useInView(ourTeamRef, { amount: 0.5 });
+	
+	  useEffect(() => {
+		if (titleInView) {
+		  titleControls.start("visible");
+		} else {
+		  titleControls.start("hidden");
+		}
+	
+		if (visionInView) {
+		  visionControls.start("visible");
+		} else {
+		  visionControls.start("hidden");
+		}
+	
+		if (coreValuesInView) {
+		  coreValuesControls.start("visible");
+		} else {
+		  coreValuesControls.start("hidden");
+		}
+
+		if (ourTeamInView) {
+			ourTeamControls.start("visible");
+		  } else {
+			ourTeamControls.start("hidden");
+		  }
+	}, [titleInView, visionInView, coreValuesInView, ourTeamInView, visionControls, titleControls, coreValuesControls, ourTeamControls]);
+	
+	  const variants = {
+		hidden: { opacity: 0, y: 20 },
+		visible: { opacity: 1, y: 0 },
+	  };
+
 	return (
-		<div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
+		<div className="bg-black from-zinc-900/0 via-zinc-900 to-zinc-900/0">
 			<Navigation />
-			<div className="h-screen w-full rounded-md bg-neutral-950 relative flex flex-col items-center justify-center antialiased">
+			<motion.div 
+				ref={titleRef}
+				initial="hidden"
+				animate={titleControls}
+				variants={variants}
+				transition={{ duration: 1 }}
+				className="h-screen w-full rounded-md bg-neutral-950 relative flex flex-col items-center justify-center antialiased"
+			>
 				<div className="max-w-4xl mx-auto p-4">
 					<motion.h1 
 						initial={{ opacity: 0, y: 20 }}
@@ -75,74 +87,32 @@ export default function AboutUs() {
 					</motion.p>
 				</div>
 				<BackgroundBeams />
-			</div>
-			<div className="min-h-screen bg-black">
+			</motion.div>
+			<motion.div 
+				className="min-h-screen bg-black"
+			>
 				<Globe />
-			</div>
-			<div className="min-h-screen bg-black">
+			</motion.div>
+			<motion.div 
+				ref={coreValuesRef}
+				initial="hidden"
+				animate={coreValuesControls}
+				variants={variants}
+				transition={{ duration: 1 }}
+				className="min-h-screen bg-black py-16"
+			>
 				<CardHoverEffectDemo />
-			</div>
-			<div className="pt-16 text-center">
-				<h1 className="text-2xl text-white pb-8"><TextGenerateEffect words={words} /></h1>
-				<CardContainer className="inter-var py-8">
-					<CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto h-auto rounded-xl p-6 border  ">
-							<CardItem
-							translateZ="50"
-							className="text-xl m-auto font-bold text-neutral-600 dark:text-white"
-							>
-							Akhyar Noor
-							</CardItem>
-							<CardItem
-							as="p"
-							translateZ="60"
-							className="m-auto text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-							>
-							Founder & CEO
-							</CardItem>
-							<CardItem translateZ="100" className="w-full mt-4">
-							<Image
-								src="/images/akhyar.png"
-								height="1000"
-								width="600"
-								className="h-60 w-full object-contain rounded-xl group-hover/card:shadow-xl"
-								alt="thumbnail"
-							/>
-							</CardItem>
-					</CardBody>
-				</CardContainer>
-			</div>
-			<div className="container flex items-center justify-center pb-8 mx-auto">
-				<div className="grid w-full grid-cols-1 gap-8 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-16">
-					{socials.map((s) => (
-						<CardContainer className="inter-var">
-						<CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto h-auto rounded-xl p-6 border  ">
-							<CardItem
-							translateZ="50"
-							className="m-auto text-xl font-bold text-neutral-600 dark:text-white"
-							>
-							{s.name}
-							</CardItem>
-							<CardItem
-							as="p"
-							translateZ="60"
-							className="m-auto text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-							>
-							{s.post}
-							</CardItem>
-							<CardItem translateZ="100" className="w-full mt-4">
-							<Image
-								src={s.src}
-								height="1000"
-								width="600"
-								className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-								alt="thumbnail"
-							/>
-							</CardItem>
-						</CardBody>
-						</CardContainer>
-					))}
-				</div>
-			</div>
+			</motion.div>
+			<motion.div
+				ref={visionRef}
+				initial="hidden"
+				animate={visionControls}
+				variants={variants}
+				transition={{ duration: 1 }}
+				className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0"
+			>
+				<TeamSection />
+			</motion.div>
 			<div className="py-32 flex flex-col justify-center align-middle min-h-screen bg-black">
 				<ContactSection />
 				<ContactButton />
