@@ -29,6 +29,9 @@ dependencies:
   '@upstash/redis':
     specifier: ^1.23.3
     version: 1.31.3
+  clsx:
+    specifier: ^2.1.1
+    version: 2.1.1
   contentlayer:
     specifier: ^0.3.4
     version: 0.3.4(esbuild@0.21.4)(markdown-wasm@1.2.0)
@@ -68,6 +71,9 @@ dependencies:
   remark-gfm:
     specifier: 3.0.1
     version: 3.0.1
+  tailwind-merge:
+    specifier: ^2.3.0
+    version: 2.3.0
   three:
     specifier: ^0.165.0
     version: 0.165.0
@@ -1655,6 +1661,11 @@ packages:
       string-width: 4.2.3
       strip-ansi: 6.0.1
       wrap-ansi: 7.0.0
+    dev: false
+
+  /clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
+    engines: {node: '>=6'}
     dev: false
 
   /color-convert@2.0.1:
@@ -4016,6 +4027,12 @@ packages:
       react: '>=17.0'
     dependencies:
       react: 18.3.1
+    dev: false
+
+  /tailwind-merge@2.3.0:
+    resolution: {integrity: sha512-vkYrLpIP+lgR0tQCG6AP7zZXCTLc1Lnv/CCRT3BqJ9CZ3ui2++GPaGb1x/ILsINIMSYqqvrpqjUFsMNLlW99EA==}
+    dependencies:
+      '@babel/runtime': 7.24.7
     dev: false
 
   /tailwindcss-debug-screens@2.2.1(tailwindcss@3.4.4):
