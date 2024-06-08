@@ -11,7 +11,7 @@ const socials = [
 		desc: "Check out some projects we have done on websites, webapps and mobile apps",
 	},
 	{
-		href: "mailto:buckyypayment@gmail.com",
+		href: "/graphic-design",
 		title: "Graphic Design",
 		desc: "",
 	},
