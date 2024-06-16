@@ -5,22 +5,31 @@ import { Navigation } from "../components/nav";
 import { Mouse } from "lucide-react";
 import Image from "next/image";
 import ContactButton from "./contact-button";
+import { PageOne } from "./page-one";
+import { PageTwo } from "./page-two";
+import { PageThree } from "./page-three";
+import { PageFour } from "./page-four";
+import { PageFive } from "./page-five";
+import { PageSix } from "./page-six";
+import { PageSeven } from "./page-seven";
 
-// Define the sections with more complex content
 const sections = [
   {
     id: 1,
     content: (
       <div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 flex flex-col items-center justify-center min-h-screen text-white">
-        
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
-          className="text-center"
+          className="text-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20"
         >
-          <h1 className="text-8xl font-bold">Visual Creations</h1>
-          <p className="text-xl text-center mt-4 font-extralight text-zinc-300">A Journey Through Imagination and Innovation</p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold">
+            Visual Creations
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center mt-4 font-extralight text-zinc-300">
+            A Journey Through Imagination and Innovation
+          </p>
           <motion.div
             animate={{ y: [0, -20, 0] }}
             transition={{
@@ -29,10 +38,10 @@ const sections = [
               repeat: Infinity,
               repeatType: "loop",
             }}
-            className="py-12 flex flex-col items-center justify-center font-extralight text-sm"
+            className="py-8 sm:py-10 md:py-12 flex flex-col items-center justify-center font-extralight text-xs sm:text-sm"
           >
             <Mouse size={40} color="#ffffff" />
-            Scroll to reveal
+            <span className="mt-2">Scroll to reveal</span>
           </motion.div>
         </motion.div>
       </div>
@@ -41,285 +50,166 @@ const sections = [
   {
     id: 2,
     content: (
-      <div className="container mx-auto flex flex-col py-32 text-white">
+      <div className="container mx-auto flex flex-col pt-20 text-white">
         <motion.h1 
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
           className="text-2xl font-bold pb-4"
         >
-          Logo designs
+          Designs [1]
         </motion.h1>
         <motion.div 
-          initial={{ opacity: 1, x: -3000 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.2, delay: 0.4 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
           className="w-full h-px bg-zinc-800"
         >
         </motion.div>
-        <div className="flex justify-around gap-4 py-16">
-          <motion.div 
-            className="flex flex-col"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 1.8 }}
-          >
-            <div className="relative w-full" style={{ height: '350px', width: '550px' }}>
-              <Image 
-                src="/images/designs/design1.jpg" 
-                alt="Scale Logo" 
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-            <p className="pt-4 text-center mx-auto max-w-[24rem]">Eita ekta shundor logo</p>
-          </motion.div>
-          <motion.div 
-            className="flex flex-col"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 2.8 }}
-          >
-            <div className="relative w-full" style={{ height: '350px', width: '550px' }}>
-              <Image 
-                src="/images/designs/design2.jpg" 
-                alt="Scale Logo" 
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-            <p className="pt-4 text-center mx-auto max-w-[24rem]">Eita arekta shundor logo</p>
-          </motion.div>
-        </div>
+        <PageOne />
       </div>
     ),
   },
   {
     id: 3,
     content: (
-      <div className="container mx-auto flex flex-col py-32 text-white">
+      <div className="container mx-auto flex flex-col pt-20 text-white">
         <motion.h1 
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
           className="text-2xl font-bold pb-4"
         >
-          Logo designs
+          Designs [2]
         </motion.h1>
         <motion.div 
-          initial={{ opacity: 1, x: -3000 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.2, delay: 0.4 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
           className="w-full h-px bg-zinc-800"
         >
         </motion.div>
-        <div className="flex justify-around gap-4 py-16">
-          <motion.div 
-            className="flex flex-col"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 1.8 }}
-          >
-            <div className="relative w-full" style={{ height: '350px', width: '550px' }}>
-              <Image 
-                src="/images/designs/design3.jpg" 
-                alt="Scale Logo" 
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-            <p className="pt-4 text-center mx-auto max-w-[24rem]">Aro ekta logo. Not inspiring LGBTQ++</p>
-          </motion.div>
-          <motion.div 
-            className="flex flex-col"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 2.8 }}
-          >
-            <div className="relative w-full" style={{ height: '350px', width: '550px' }}>
-              <Image 
-                src="/images/designs/design4.jpg" 
-                alt="Scale Logo" 
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-            <p className="pt-4 text-center mx-auto max-w-[24rem]">Eita amar vallagse</p>
-          </motion.div>
-        </div>
+        <PageTwo />
       </div>
     ),
   },
   {
     id: 4,
     content: (
-      <div className="container mx-auto flex flex-col py-32 text-white">
+      <div className="container mx-auto flex flex-col pt-20 text-white">
         <motion.h1 
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
           className="text-2xl font-bold pb-4"
         >
-          Logo designs
+          Designs [3]
         </motion.h1>
         <motion.div 
-          initial={{ opacity: 1, x: -3000 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.2, delay: 0.4 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
           className="w-full h-px bg-zinc-800"
         >
         </motion.div>
-        <div className="flex justify-around gap-4 py-16">
-          <motion.div 
-            className="flex flex-col"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 1.8 }}
-          >
-            <div className="relative w-full" style={{ height: '350px', width: '550px' }}>
-              <Image 
-                src="/images/designs/design5.jpg" 
-                alt="Scale Logo" 
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-            <p className="pt-4 text-center mx-auto max-w-[24rem]">Freight ki akhono bujhi na</p>
-          </motion.div>
-          <motion.div 
-            className="flex flex-col"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 2.8 }}
-          >
-            <div className="relative w-full" style={{ height: '350px', width: '550px' }}>
-              <Image 
-                src="/images/designs/design6.jpg" 
-                alt="Scale Logo" 
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-            <p className="pt-4 text-center mx-auto max-w-[24rem]">Eita us</p>
-          </motion.div>
-        </div>
+        <PageThree />
       </div>
     ),
   },
   {
     id: 5,
     content: (
-      <div className="container mx-auto flex flex-col py-32 text-white">
+      <div className="container mx-auto flex flex-col pt-20 text-white">
         <motion.h1 
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
           className="text-2xl font-bold pb-4"
         >
-          Social Media Posts
+          Designs [4]
         </motion.h1>
         <motion.div 
-          initial={{ opacity: 1, x: -3000 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.2, delay: 0.4 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
           className="w-full h-px bg-zinc-800"
         >
         </motion.div>
-        <div className="flex justify-around gap-4 py-16">
-          <motion.div 
-            className="flex flex-col"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 1.8 }}
-          >
-            <div className="relative w-full" style={{ height: '350px', width: '550px' }}>
-              <Image 
-                src="/images/designs/design7.jpg" 
-                alt="Scale Logo" 
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-            <p className="pt-4 text-center mx-auto max-w-[24rem]">Tech Aggregation na ki jeno, oitar jonno banano</p>
-          </motion.div>
-          <motion.div 
-            className="flex flex-col"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 2.8 }}
-          >
-            <div className="relative w-full" style={{ height: '350px', width: '550px' }}>
-              <Image 
-                src="/images/designs/design8.jpg" 
-                alt="Scale Logo" 
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-            <p className="pt-4 text-center mx-auto max-w-[24rem]">Eitao</p>
-          </motion.div>
-        </div>
+        <PageFour />
       </div>
     ),
   },
   {
     id: 6,
     content: (
-      <div className="container mx-auto flex flex-col py-32 text-white">
+      <div className="container mx-auto flex flex-col pt-20 text-white">
         <motion.h1 
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
           className="text-2xl font-bold pb-4"
         >
-          Social Media Posts
+          Designs [5]
         </motion.h1>
         <motion.div 
-          initial={{ opacity: 1, x: -3000 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.2, delay: 0.4 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
           className="w-full h-px bg-zinc-800"
         >
         </motion.div>
-        <div className="flex justify-around gap-4 py-16">
-          <motion.div 
-            className="flex flex-col"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 1.8 }}
-          >
-            <div className="relative w-full" style={{ height: '350px', width: '550px' }}>
-              <Image 
-                src="/images/designs/design9.jpg" 
-                alt="Scale Logo" 
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-            <p className="pt-4 text-center mx-auto max-w-[24rem]">Buckyyyyy er jonno banano. asfkhjndasklfh sdkjlgflhbds kjgnbdslk;g hjdsklghd</p>
-          </motion.div>
-          <motion.div 
-            className="flex flex-col"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 2.8 }}
-          >
-            <div className="relative w-full" style={{ height: '350px', width: '550px' }}>
-              <Image 
-                src="/images/designs/design10.jpg" 
-                alt="Scale Logo" 
-                layout="fill"
-                objectFit="contain"
-              />
-            </div>
-            <p className="pt-4 text-center mx-auto max-w-[24rem]">Eitao</p>
-          </motion.div>
-        </div>
+        <PageFive />
       </div>
     ),
   },
   {
     id: 7,
+    content: (
+      <div className="container mx-auto flex flex-col pt-20 text-white">
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2 }}
+          className="text-2xl font-bold pb-4"
+        >
+          Designs [6]
+        </motion.h1>
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
+          className="w-full h-px bg-zinc-800"
+        >
+        </motion.div>
+        <PageSix />
+      </div>
+    ),
+  },
+  {
+    id: 8,
+    content: (
+      <div className="container mx-auto flex flex-col pt-20 text-white">
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2 }}
+          className="text-2xl font-bold pb-4"
+        >
+          Designs [6]
+        </motion.h1>
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
+          className="w-full h-px bg-zinc-800"
+        >
+        </motion.div>
+        <PageSeven />
+      </div>
+    ),
+  },
+  {
+    id: 9,
     content: (
       <div className="container mx-auto flex flex-col justify-center min-h-screen py-32 text-white">
         <motion.h1 
@@ -346,11 +236,11 @@ export default function Example() {
   const [currentSection, setCurrentSection] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
 
-  const handleScroll = (event: WheelEvent) => {
+  const handleScroll = (deltaY: number) => {
     if (isScrolling) return;
 
     setIsScrolling(true);
-    if (event.deltaY > 0) {
+    if (deltaY > 0) {
       setCurrentSection((prev) => Math.min(prev + 1, sections.length - 1));
     } else {
       setCurrentSection((prev) => Math.max(prev - 1, 0));
@@ -361,11 +251,32 @@ export default function Example() {
     }, 1000);
   };
 
+  const handleWheel = (event: WheelEvent) => {
+    handleScroll(event.deltaY);
+  };
+
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === "ArrowDown") {
+      handleScroll(1);
+    } else if (event.key === "ArrowUp") {
+      handleScroll(-1);
+    }
+  };
+
+  const handleNext = () => {
+    setCurrentSection((prev) => Math.min(prev + 1, sections.length - 1));
+  };
+
+  const handlePrevious = () => {
+    setCurrentSection((prev) => Math.max(prev - 1, 0));
+  };
+
   useEffect(() => {
-    const onWheel = (event: WheelEvent) => handleScroll(event);
-    window.addEventListener("wheel", onWheel);
+    window.addEventListener("wheel", handleWheel);
+    window.addEventListener("keydown", handleKeyDown);
     return () => {
-      window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isScrolling]);
 
@@ -384,6 +295,27 @@ export default function Example() {
           {sections[currentSection].content}
         </motion.div>
       </AnimatePresence>
+      
+      {currentSection > 0 && (
+        <div className="fixed bottom-4 left-4">
+        <button
+          onClick={handlePrevious}
+          className="bg-gray-800 text-white px-4 py-2 rounded-md"
+          disabled={currentSection === 0}
+        >
+          Previous
+        </button>
+      </div>
+      )}
+      <div className="fixed bottom-4 right-4">
+        <button
+          onClick={handleNext}
+          className="bg-gray-800 text-white px-4 py-2 rounded-md"
+          disabled={currentSection === sections.length - 1}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 }

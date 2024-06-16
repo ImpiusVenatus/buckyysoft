@@ -23,6 +23,24 @@ const socials = [
 		label: "Github",
 		handle: "buckyy",
 	},
+	{
+		icon: <Twitter size={20} />,
+		href: "https://twitter.com/",
+		label: "Fiverr",
+		handle: "@buckyySoft_",
+	},
+	{
+		icon: <Mail size={20} />,
+		href: "mailto:buckyypayment@gmail.com",
+		label: "Upwork",
+		handle: "buckyypayment@gmail.com",
+	},
+	{
+		icon: <Github size={20} />,
+		href: "https://facebook.com/BuckyyPay",
+		label: "Facebook",
+		handle: "/buckyysoft",
+	},
 ];
 
 export default function Contact() {

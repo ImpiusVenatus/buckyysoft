@@ -60,8 +60,8 @@ export function TeamSection() {
 								<CardItem translateZ="100" className="w-full mt-4">
 								<Image
 									src="/images/akhyar.png"
-									height="1000"
-									width="600"
+									height={1000}
+									width={600}
 									className="h-60 w-full object-contain rounded-xl group-hover/card:shadow-xl"
 									alt="thumbnail"
 								/>

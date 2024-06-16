@@ -3,21 +3,26 @@ import { Github, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "../components/nav";
 import { PinContainer } from "../components/3d-pin";
+import Image from "next/image";
 
 const socials = [
 	{
 		href: "/web-dev",
-		title: "Web Dev",
-		desc: "Check out some projects we have done on websites, webapps and mobile apps",
+		title: "Web Development",
+		desc: "Building Cutting-Edge Digital Solutions",
+		img: "/images/thumbnails/web-dev.png",
 	},
 	{
 		href: "/graphic-design",
 		title: "Graphic Design",
-		desc: "",
+		desc: "Crafting Visually Stunning Designs",
+		img: "/images/thumbnails/graphic-design.jpg",
 	},
 	{
 		href: "https://github.com/buckyy",
 		title: "Marketing",
+		desc: "Creating Impactful Campaigns that Deliver Results",
+		img: "/images/thumbnails/marketing.jpg",
 	},
 ];
 
@@ -33,22 +38,29 @@ export default function Contact() {
 			<div className="container min-h-screen px-4 py-32 mx-auto">
 				<div className="w-full flex justify-center gap-16 xl:flex-nowrap flex-wrap">
 					{socials.map((s) => (
-						<div className="h-[20rem] flex items-center justify-center ">
+						<div className="h-[24rem] my-4 flex items-center justify-center ">
 						<Link href={s.href}>
 							<PinContainer
 							title="See more"
 							href={s.href}
 							>
-							<div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[18rem] h-[20rem] ">
+							<div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[18rem] h-[24rem] ">
 								<h3 className="!pb-2 !m-0 font-bold  text-base text-slate-100">
 								{s.title}
 								</h3>
-								<div className="text-base !m-0 !p-0 font-normal">
-								<span className="text-slate-500 ">
+								<div className="text-base !m-0 pb-4 font-normal">
+								<span className="text-slate-500">
 									{s.desc}
 								</span>
 								</div>
-								<div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" />
+								<Image
+									src={s.img}
+									alt="Web development"
+									layout="responsive"
+									width={1080}
+                					height={720} 
+									objectFit="contain"
+								/>
 							</div>
 							</PinContainer>
 						</Link>
