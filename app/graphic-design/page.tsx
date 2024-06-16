@@ -195,7 +195,7 @@ const sections = [
           transition={{ duration: 1.2 }}
           className="text-2xl font-bold pb-4"
         >
-          Designs [6]
+          Designs [7]
         </motion.h1>
         <motion.div 
           initial={{ opacity: 0 }}
